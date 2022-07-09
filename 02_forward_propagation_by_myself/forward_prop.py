@@ -35,6 +35,10 @@ def sequential( x ):
     return f_x
 
 
+def dense_vectorized( A_in, W, B ):
+    return sigmoid( np.matmul( A_in, W ) + B )
+
+
 x = np.array( [200., 17.] )
 weights = np.array( [[1, -3, 5],
                      [2, 4, -6]] )
@@ -42,3 +46,10 @@ params = np.array( [-1, 1, 2] )
 
 print( dense( x, weights, params ) )
 # print( sequential( x ) )
+
+X = np.array( [[200, 17]] )
+W_in = np.array( [[1, -3, 5],
+                  [2, 4, -6]] )
+B_in = np.array( [[-1, 1, 2]] )
+
+print( dense_vectorized( X, W_in, B_in ) )
