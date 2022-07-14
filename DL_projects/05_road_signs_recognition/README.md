@@ -8,7 +8,7 @@ I could not find a prepared dataset in the Internet of Kazakhstani road signs, t
 
 ### Labels description ###
 In the implementation stage the numeric representations of labels were used, so it might be not clear.
-** Thus, here is the description of labels: **
+**Thus, here is the description of labels:**
 * 0: Железнодорожный переезд со шлагбаумом
 * 1: Железнодорожный переезд без шлагбаума
 * 2: Однопутная железная дорога
@@ -33,3 +33,6 @@ In the implementation stage the numeric representations of labels were used, so 
 * 28: Двустороннее движение
 * 29: Пешеходный переход
 * 30: Дети
+
+## Results ##
+As seen in the notebook, the `training loss` was 0.2317, `cross-validation loss` comprised 0.1134, and the `test set loss` was 0.1126. When it comes to the accuracy of the model, then the `training accuracy` is 92.28%, `validation accuracy` is 95.43%, and the `testing accuracy` is 96.92%. This implies that the model is better at generalizing to new, unseen data, rather than at the training process.
