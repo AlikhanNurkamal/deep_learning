@@ -35,4 +35,7 @@ In the implementation stage the numeric representations of labels were used, so 
 * 30: Дети
 
 ## Results ##
-As seen in the notebook, the `training loss` was 0.2317, `cross-validation loss` comprised 0.1134, and the `test set loss` was 0.1126. When it comes to the accuracy of the model, then the `training accuracy` is 92.28%, `validation accuracy` is 95.43%, and the `testing accuracy` is 96.92%. This implies that the model is better at generalizing to new, unseen data, rather than at the training process.
+As seen in the notebook, the `training loss` was 0.1719, `cross-validation loss` comprised 0.0653, and the `test set loss` was 0.0773. When it comes to the accuracy of the model, then the `training accuracy` is 94.06%, `validation accuracy` is 98.13%, and the `testing accuracy` is 97.75%. This implies that the model is better at generalizing to new, unseen data, rather than at the training process.
+
+## Final thoughts ##
+Well, the model does really poorly on the unseen data downloaded from the Internet (see last few rows in the jupyter notebook). So I cannot say that its testing accuracy is almost 98%. This might be due to the lack of different types of images of road signs, as all the images used in training are the generated versions of the same picture. This is why the model could be biased on only the provided images. In order to improve the model, I need a larger dataset with multiple images of the same road sign in different scenarios (one photo taken from the side, another taken right in front, etc.).
