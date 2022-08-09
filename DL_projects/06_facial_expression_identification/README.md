@@ -24,3 +24,6 @@ However, as the model continued training, it was overfitting more and more, sinc
 
 ## Final thoughts ##
 Well, the model does have low accuracy and high losses thus performs poorly on the unseen data in the testing dataset. It is thought that in order to improve the model, I need a larger dataset with balanced distribution of different classes of images.
+
+## Acknowledgements ##
+I would like to express acknowledgements to YouTube channel <a href="https://www.youtube.com/watch?v=T3yR9DZT2mQ&ab_channel=WhenMathsMeetCoding">***When Maths Meet Coding***</a>.
