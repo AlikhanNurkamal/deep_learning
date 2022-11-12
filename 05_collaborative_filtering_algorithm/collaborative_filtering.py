@@ -79,11 +79,33 @@ class CollaborativeFiltering:
         return J
 
     def compute_cost_vectorized(self, X, W, b, Y, R, lambda_):
+        '''
+        The function that computes the cost function value with given parameters using vectorized values.
+        :param X: matrix of features of each movie. It is of size (num_movies, num_features).
+        :param W: matrix of weights associated with each user. It is of size (num_users, num_features).
+        :param b: matrix of bias values for each user. It is of size (1, num_users).
+        :param Y: original matrix of ratings. It is of size (num_movies, num_users).
+        :param R: Matrix that specifies whether a movie i was rated by a user j. It is filled with 0s and 1s,
+        where 1 imply that the movie was rated. It is of size (num_movies, num_users).
+        :param lambda_: regularization parameter.
+        :return: value of the cost function.
+        '''
         j = (tf.linalg.matmul(X, tf.transpose(W)) + b - Y) * R
         J = 0.5 * tf.reduce_sum(j ** 2) + (lambda_ / 2) * (tf.reduce_sum(X ** 2) + tf.reduce_sum(W ** 2))
         return J
 
     def train(self, X, W, b, Y, R, lambda_=1., iterations=201):
+        '''
+        The function that minimizes the cost function using the gradient descent algorithm.
+        :param X: matrix of features of each movie. It is of size (num_movies, num_features).
+        :param W: matrix of weights associated with each user. It is of size (num_users, num_features).
+        :param b: matrix of bias values for each user. It is of size (1, num_users).
+        :param Y: original matrix of ratings. It is of size (num_movies, num_users).
+        :param R: Matrix that specifies whether a movie i was rated by a user j. It is filled with 0s and 1s,
+        where 1 imply that the movie was rated. It is of size (num_movies, num_users).
+        :param lambda_: regularization parameter.
+        :param iterations: number of iterations of gradient descent algorithm.
+        '''
         W = tf.Variable(W, dtype=tf.float64)
         X = tf.Variable(X, dtype=tf.float64)
         b = tf.Variable(b, dtype=tf.float64)
